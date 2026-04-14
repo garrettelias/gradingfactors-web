@@ -48,6 +48,9 @@ export default defineConfig({
 					],
 				},
 			],
+			components: {
+				SocialIcons: './src/components/NavLinks.astro',
+			},
 			customCss: ['./src/styles/custom.css'],
 			defaultLocale: 'root',
 		}),

@@ -1,0 +1,19 @@
+---
+import Default from '@astrojs/starlight/components/SocialIcons.astro';
+---
+
+<a href="/getting-started/overview" class="nav-docs-link">Docs</a>
+<Default {...Astro.props}><slot /></Default>
+
+<style>
+    .nav-docs-link {
+        font-size: 0.875rem;
+        color: var(--sl-color-gray-2);
+        text-decoration: none;
+        padding-right: 1rem;
+    }
+
+    .nav-docs-link:hover {
+        color: #00e5b0;
+    }
+</style>

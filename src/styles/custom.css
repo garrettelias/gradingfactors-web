@@ -26,3 +26,8 @@
 starlight-theme-select {
 	display: none;
 }
+
+/* Remove empty title panel on landing page */
+.content-panel:has(h1#_top:empty) {
+	display: none;
+}

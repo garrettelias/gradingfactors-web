@@ -1,0 +1,12 @@
+---
+import StarlightPage from '@astrojs/starlight/components/StarlightPage.astro';
+import Landing from '../components/Landing.astro';
+---
+
+<StarlightPage frontmatter={{ 
+	title: '',
+	template: 'splash',
+	tableOfContents: false,
+}}>
+	<Landing />
+</StarlightPage>

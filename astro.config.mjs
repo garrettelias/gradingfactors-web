@@ -2,25 +2,54 @@
 import { defineConfig } from 'astro/config';
 import starlight from '@astrojs/starlight';
 
-// https://astro.build/config
 export default defineConfig({
 	integrations: [
 		starlight({
-			title: 'My Docs',
-			social: [{ icon: 'github', label: 'GitHub', href: 'https://github.com/withastro/starlight' }],
+			head: [
+				{
+					tag: 'link',
+					attrs: {
+						rel: 'stylesheet',
+						href: 'https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap',
+					},
+				},
+			],
+			title: 'Grading Factors',
+			description: 'Canadian grain grading data, machine-readable at last.',
+			social: [{ icon: 'github', label: 'GitHub', href: 'https://github.com/garrettelias/gradingfactors-web' }],
 			sidebar: [
 				{
-					label: 'Guides',
+					label: 'Getting Started',
 					items: [
-						// Each item here is one entry in the navigation menu.
-						{ label: 'Example Guide', slug: 'guides/example' },
+						{ label: 'Overview', slug: 'getting-started/overview' },
+						{ label: 'Authentication', slug: 'getting-started/authentication' },
+						{ label: 'Quickstart', slug: 'getting-started/quickstart' },
 					],
 				},
 				{
-					label: 'Reference',
-					autogenerate: { directory: 'reference' },
+					label: 'API Reference',
+					items: [
+						{ label: 'GET /grains', slug: 'api-reference/grains' },
+						{ label: 'GET /grains/{grain_id}', slug: 'api-reference/grains-grain-id' },
+						{ label: 'GET /changelog', slug: 'api-reference/changelog' },
+					],
+				},
+				{
+					label: 'Data Model',
+					items: [
+						{ label: 'Field Reference', slug: 'data-model/field-reference' },
+						{ label: 'Update Model', slug: 'data-model/update-model' },
+					],
+				},
+				{
+					label: 'About',
+					items: [
+						{ label: 'About this project', slug: 'about/about-this-project' },
+					],
 				},
 			],
+			customCss: ['./src/styles/custom.css'],
+			defaultLocale: 'root',
 		}),
 	],
 });

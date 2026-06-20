@@ -3,7 +3,7 @@ title: GET /grains
 description: Return metadata for all supported grain classes.
 ---
 
-Returns a summary of all grain classes available in the API. Factor data is not included -- use [GET /grains/{grain_id}](/api-reference/get-grains-grain-id) for the full grading factor table.
+Returns a summary of all grain classes available in the API. Factor data is not included -- use [GET /grains/{grain_id}](/api-reference/grains-grain-id) for the full grading factor table.
 
 ## Request
 
